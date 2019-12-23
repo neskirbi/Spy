@@ -9,16 +9,11 @@ class Conexion{
 		
 		//$this->datos=json_decode(base64_decode($datos),true);
 		if($_SERVER['HTTP_HOST']==='localhost'){
-			/*
-			$this->datos['host']="localhost";
-			$this->datos['user']="root";
-			$this->datos['pass']="ramira";
-			$this->datos['db']="Encuestas";
-			*/
+			
 			$this->datos['host']="localhost";
 			$this->datos['user']="root";
 			$this->datos['pass']="986532";
-			$this->datos['db']="encuestas";
+			$this->datos['db']="spy";
 			
 			
 		}else {

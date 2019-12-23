@@ -1,4 +1,4 @@
-var debug=0;
+var debug=1;
 
 function Conexion(url,data){
   if(debug==1){
@@ -615,13 +615,13 @@ function O_Localizar(path=""){
           return actions.order.capture().then(function(details) {
             // This function shows a transaction Info message to your buyer.        
             var data='{"monto":"'+monto+'","id_pago":"'+details.id+'","id_payer":"'+details.payer.payer_id+'","status":"'+details.status+'"}';
-        var obj=JSON.parse(Conexion("../api/GuardaPago.php",data));
-        if(obj.response=="1"){
-          alert('Gracias por realizar tu pago.');
-          GetPagos();
-        }else{
-          alert(obj.porque);
-        }
+            var obj=JSON.parse(Conexion("../api/GuardaPago.php",data));
+            if(obj.response=="1"){
+              alert('Gracias por realizar tu pago.');
+              GetPagos();
+            }else{
+              alert(obj.porque);
+            }
           });
         }
       }).render('#paypal-button-container');
@@ -631,3 +631,4 @@ function O_Localizar(path=""){
   //}
   
 }
+

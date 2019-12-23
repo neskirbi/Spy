@@ -4,19 +4,31 @@
  */
 class Conexion
 {
-	private $servername = "localhost";
-	private $username = "id9067304_espiando";
-	private $password = "ramira1983";
-	private $nombreBD = "id9067304_espiando";
+	private $servername = null;
+	private $username = null;
+	private $password = null;
+	private $nombreBD = null;
 	private $enlace=null;//Almacena el enlace con la Base de Datos una vez establecido
     
 
 	
 	public function __construct()
 	{
-		$this->servername = "localhost";
-		$this->username = "id9067304_espiando";
-		$this->password = "ramira1983";
+		if($_SERVER['HTTP_HOST']==='localhost'){
+			
+			$this->datos['host']="localhost";
+			$this->datos['user']="root";
+			$this->datos['pass']="986532";
+			$this->datos['db']="spy";
+			
+			
+		}else {
+			
+			$this->datos['host']="localhost";
+			$this->datos['user']="id9067304_espiando";
+			$this->datos['pass']="ramira1983";
+			$this->datos['db']="id9067304_espiando";
+		}
 
 		$this->enlace = new mysqli($this->servername, $this->username, $this->password, $this->nombreBD);
 

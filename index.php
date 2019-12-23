@@ -16,6 +16,7 @@ if(get_session('user')!=""){
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -33,6 +34,8 @@ if(get_session('user')!=""){
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+
 <!--===============================================================================================-->
 </head>
 <body>
@@ -133,8 +136,43 @@ if(get_session('user')!=""){
 				alert("Debe llenar el formulario");
 			}
 		});
+		GuardarVisitas();
 		
 	});
+
+	function GuardarVisitas(){
+	  var data='{}';
+	  var obj=JSON.parse(Conexion("api/GuardaVisitas.php",data));
+	  if(obj.response=="1"){
+	    console.log("Ok");
+	  }else{
+	  	console.log(obj.porque);
+	  }
+	}
+var debug=0;
+	function Conexion(url,data){
+  if(debug==1){
+    console.log("S: "+data);
+  }
+  
+  var respuesta="";
+  respuesta = $.ajax({
+      type: "POST",   
+      url: url,
+      data:{data:data},   
+      async: false
+  }).done(function(result) {
+    //return result;
+  }).responseText;
+  if(debug==1){
+    console.log("R: "+respuesta);
+  }
+  return respuesta;
+  
+}
+
+
+	
 	</script>
 
 </body>

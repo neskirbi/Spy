@@ -134,13 +134,29 @@ class Procesar{
 		}
 	}
 
+
+//verifica pagos 
 	function Verificar($tabla,$data){
 		include"../config/conect.php";
 		$mes=date('m');
 		$anio=date('Y');
 		$id=base64_decode($_SESSION['ref']);
+		$fecha=date('Y-m-d H:i:s');
+		$id_pago=$this->uuid();
 		//$res=mysqli_query($con, $query);
-		$query="SELECT id from pagos where MONTH(fecha)='$mes' and YEAR(fecha)='$anio' and id_user='$id' ";
+
+		$query="SELECT fecha from pagos where id_usuario='$id' order by fecha desc ";
+		
+		if($cons=mysqli_query($con,$query))
+		{
+			if(mysqli_num_rows($cons)==0) {
+				$query="INSERT into pagos (id_pago,id_usuario,id_payer,concepto,monto,status,fecha,fecha_pago) values('$id_pago','$id','gratis','gratis','0','gratis','$fecha','$fecha') ";
+
+				$cons=mysqli_query($con,$query);
+			}
+		}
+
+		$query="SELECT id_pago from pagos where MONTH(fecha)='$mes' and YEAR(fecha)='$anio' and id_usuario='$id' ";
 		if($cons=mysqli_query($con,$query))
 		{
 			if(mysqli_num_rows($cons)>0) {
@@ -152,6 +168,7 @@ class Procesar{
 		}else{
 			echo false;
 		}
+		
 	}
 
 	function Tiene_acceso(){
@@ -160,7 +177,7 @@ class Procesar{
 		$anio=date('Y');
 		$id=base64_decode($_SESSION['ref']);
 		//$res=mysqli_query($con, $query);
-		$query="SELECT id from pagos where MONTH(fecha)='$mes' and YEAR(fecha)='$anio' and id_user='$id' ";
+		$query="SELECT id_pago from pagos where MONTH(fecha)='$mes' and YEAR(fecha)='$anio' and id_user='$id' ";
 		if($cons=mysqli_query($con,$query))
 		{
 			if(mysqli_num_rows($cons)>0) {
@@ -196,7 +213,16 @@ class Procesar{
 		echo $this->conexion->Select($sql);
 	}
 
+	public function uuid(){
+	    $data = random_bytes(16);
+	    $data[6] = chr(ord($data[6]) & 0x0f | 0x40); 
+	    $data[8] = chr(ord($data[8]) & 0x3f | 0x80); 
+	    return str_replace("-","",vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4)));
+	}
+
 }
+
+
 /**
  * 
  */

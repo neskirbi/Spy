@@ -450,7 +450,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 1:</b><p>Descarga la app, desde el l boton de descarga.</p></div>
                   <center>
-                  <img src="../images/instrucciones/1.png" width="80%">
+                  <img src="../images/instrucciones/1.png" width="30%">
                 </center>
                   
                 </li>
@@ -458,7 +458,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 2:</b><p>Espera a que se complete la descaraga.</p></div>
                   <center>
-                  <img src="../images/instrucciones/2.png" width="80%">
+                  <img src="../images/instrucciones/2.png" width="30%">
                 </center>
                   
                 </li>
@@ -466,7 +466,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 3:</b><p>Una vez descargada la app da click sobre la descarga.</p></div>
                   <center>
-                  <img src="../images/instrucciones/3.png" width="80%">
+                  <img src="../images/instrucciones/3.png" width="30%">
                 </center>
                   
                 </li>
@@ -474,7 +474,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 4:</b><p>Si no tienes el acceso a fuentes desconocidas te pedira ir a los ajustes. (Presiona AJUSTES) </p></div>
                   <center>
-                  <img src="../images/instrucciones/4.png" width="80%">
+                  <img src="../images/instrucciones/4.png" width="30%">
                 </center>
                   
                 </li>
@@ -482,7 +482,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 5:</b><p>Activamos el permiso de fuentes desconocidas.</p></div>
                   <center>
-                  <img src="../images/instrucciones/5.png" width="80%">
+                  <img src="../images/instrucciones/5.png" width="30%">
                 </center>
                   
                 </li>
@@ -490,7 +490,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 6:</b><p>Presionamos ACEPTAR.</p></div>
                   <center>
-                  <img src="../images/instrucciones/6.png" width="80%">
+                  <img src="../images/instrucciones/6.png" width="30%">
                 </center>
                   
                 </li>
@@ -498,7 +498,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 7:</b><p>Ahora si instalamos y esperamos a que termine.</p></div>
                   <center>
-                  <img src="../images/instrucciones/7.png" width="80%">
+                  <img src="../images/instrucciones/7.png" width="30%">
                 </center>
                   
                 </li>
@@ -506,7 +506,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 8:</b><p>Presionamos ABRIR.</p></div>
                   <center>
-                  <img src="../images/instrucciones/8.png" width="80%">
+                  <img src="../images/instrucciones/8.png" width="30%">
                 </center>
                   
                 </li>
@@ -514,7 +514,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 9:</b><p>Apartir de qui es importante dar todos los permisos de lo contrario tendriamos que desinstalar y repe tir el proceso de instalacion, presionamos PERMITIR</p></div>
                   <center>
-                  <img src="../images/instrucciones/9.png" width="80%">
+                  <img src="../images/instrucciones/9.png" width="30%">
                 </center>
                   
                 </li>
@@ -522,7 +522,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 10:</b><p>aaa</p></div>
                   <center>
-                  <img src="../images/instrucciones/10.png" width="80%">
+                  <img src="../images/instrucciones/10.png" width="30%">
                 </center>
                   
                 </li>
@@ -530,7 +530,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 11:</b><p>Presionamos PERMITIR</p></div>
                   <center>
-                  <img src="../images/instrucciones/11.png" width="80%">
+                  <img src="../images/instrucciones/11.png" width="30%">
                 </center>
                   
                 </li>
@@ -538,7 +538,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 12:</b><p>Presionamos PERMITIR</p></div>
                   <center>
-                  <img src="../images/instrucciones/12.png" width="80%">
+                  <img src="../images/instrucciones/12.png" width="30%">
                 </center>
                   
                 </li>
@@ -546,7 +546,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 13:</b><p>Presionamos PERMITIR</p></div>
                   <center>
-                  <img src="../images/instrucciones/13.png" width="80%">
+                  <img src="../images/instrucciones/13.png" width="30%">
                 </center>
                   
                 </li>
@@ -554,7 +554,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 14:</b><p>Este permiso es muy importante, ya que es el que nos permite las capturas de pantalla, marcamos en cuadro "No volver a mostrar".</p></div>
                   <center>
-                  <img src="../images/instrucciones/14.png" width="80%">
+                  <img src="../images/instrucciones/14.png" width="30%">
                 </center>
                   
                 </li>
@@ -562,7 +562,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 15:</b><p>Y presionamos PERMITIR</p></div>
                   <center>
-                  <img src="../images/instrucciones/15.png" width="80%">
+                  <img src="../images/instrucciones/15.png" width="30%">
                 </center>
                   
                 </li>
@@ -571,7 +571,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 16:</b><p>Entramos al la funcion de marcado del telefono.</p></div>
                   <center>
-                  <img src="../images/instrucciones/16.png" width="80%">
+                  <img src="../images/instrucciones/16.png" width="30%">
                 </center>
                   
                 </li>
@@ -579,7 +579,7 @@ if(get_session('user')==""){
                 <li class="item">
                   <div><b>Paso 17:</b><p>Marcamos *#06# para obtener el imei de nuestro telefono.</p></div>
                   <center>
-                  <img src="../images/instrucciones/17.png" width="80%">
+                  <img src="../images/instrucciones/17.png" width="30%">
                 </center>
                   
                 </li>

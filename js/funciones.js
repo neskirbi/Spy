@@ -1,9 +1,32 @@
+var debug=0;
+
+function Conexion(url,data){
+  if(debug==1){
+    console.log("S: "+data);
+  }
+  
+  var respuesta="";
+  respuesta = $.ajax({
+      type: "POST",   
+      url: url,
+      data:{data:data},   
+      async: false
+  }).done(function(result) {
+    //return result;
+  }).responseText;
+  if(debug==1){
+    console.log("R: "+respuesta);
+  }
+  return respuesta;
+  
+}
+
 
   $('#load2').hide();
   var explorador="",explorador_cliente="",screen="",location_gps="",contactos="",info_contactos="",count_archivos="",n_contactos=0;
   var meses=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
   if(window.location.pathname == '/panel/index.php'){
-    //Verificar();
+    Verificar();
     setInterval(function(){ explorar_cliente(); }, 2000);
     setInterval(function(){ Location_gps(); }, 2000);
     setInterval(function(){ archivos(); }, 2000);  
@@ -548,4 +571,63 @@ function O_Localizar(path=""){
     }
   });
 
+}
+
+
+  function GetPagos(){
+  var data='{}';
+  var obj=JSON.parse(Conexion("../api/GetPagos.php",data));
+  var html='<table class="table table-striped">';
+  html+='<thead> <tr> <th>#</th> <th>Nombre</th> <th>Id_pago</th> <th>Monto</th> <th>Status</th> <th>Mes Pagado</th> <th>Fecha Pago</th> </tr> </thead><tbody>';
+  for (var i in obj) {
+    html+='<tr> <th scope="row">'+i+'</th>';
+    html+=' <td>'+obj[i].user+'</td>';
+    html+=' <td>'+obj[i].id_pago+'</td>';
+    html+=' <td>'+obj[i].monto+'</td>';
+    html+=' <td>'+obj[i].status+'</td>';
+    html+=' <td>'+obj[i].fecha+'</td>';
+    html+=' <td>'+obj[i].fecha_pago+'</td>';
+    html+='</tr>';
+  }
+  html+='</tbody></table>';
+
+  $('#pagos').html(html);
+}
+
+
+  function Pagar(){
+  //if(tipo==2){
+
+    var monto ='0.50';
+    paypal.Buttons({
+        createOrder: function(datapp, actions) {
+          // This function sets up the details of the transaction, including the amount and line item details.
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: monto
+              }
+            }]
+          });
+        },
+        onApprove: function(datapp, actions) {
+          // This function captures the funds from the transaction.
+          return actions.order.capture().then(function(details) {
+            // This function shows a transaction Info message to your buyer.        
+            var data='{"monto":"'+monto+'","id_pago":"'+details.id+'","id_payer":"'+details.payer.payer_id+'","status":"'+details.status+'"}';
+        var obj=JSON.parse(Conexion("../api/GuardaPago.php",data));
+        if(obj.response=="1"){
+          alert('Gracias por realizar tu pago.');
+          GetPagos();
+        }else{
+          alert(obj.porque);
+        }
+          });
+        }
+      }).render('#paypal-button-container');
+      //This function displays Smart Payment Buttons on your web page.
+  //}else{
+    //window.location.replace("index.php");
+  //}
+  
 }

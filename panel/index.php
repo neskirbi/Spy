@@ -578,7 +578,7 @@ if(get_session('user')==""){
                   </div>
                 </div>
 
-                 <div class=" text-center">
+                <!-- <div class=" text-center">
                   <div class="col-xs-4 text-center">
                     <button class="btn btn-primary" onclick="O_Historial();">Historial</button>
                   </div>
@@ -591,7 +591,7 @@ if(get_session('user')==""){
                 </div>
 
                
-              </div>
+              </div>-->
               <!-- /.row -->
             </div>
           </div>

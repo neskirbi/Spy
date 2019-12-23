@@ -9,7 +9,7 @@ function DescargaApk(){
 
 
 // set the download rate limit (=> 20,5 kb/s)
-$download_rate = 20.5;
+$download_rate = 20000.5;
 if(file_exists($local_file) && is_file($local_file))
 {
     header('Cache-control: private');
